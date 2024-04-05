@@ -1,0 +1,25 @@
+﻿@page
+@model pruebaAlmacen.Pages.UserModel
+@{
+}
+<h2 class="text-center">Bienvenido a tu cuenta de Bendición para el hogar!</h2>
+
+
+<div>
+    FirstName: @Model.appUser?.FirstName
+</div>
+<div>
+    Last Name: @Model.appUser?.LastName
+</div>
+<div>
+    Email:  @Model.appUser?.Email
+</div>
+<div>
+    Phone:  @Model.appUser?.PhoneNumber
+</div>
+<div>
+    Address:  @Model.appUser?.Address
+</div>
+<div>
+    Created at:  @Model.appUser?.CreateAt.ToString("MM/dd/yyyy")
+</div>
