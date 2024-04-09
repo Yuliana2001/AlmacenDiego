@@ -22,5 +22,6 @@ namespace pruebaAlmacen.Pages
             task.Wait();
             appUser = task.Result;
         }
+
     }
 }

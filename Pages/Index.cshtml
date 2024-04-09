@@ -3,11 +3,47 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Almacen</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/estilos.css" asp-append-version="true" />
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <link rel="stylesheet" href="~/pruebaAlmacen.styles.css" asp-append-version="true" />
+
+</head>
+
+<div class="container">
+    <div class="row mt-5" style="float: right;">
+        <div class="col-md-6" style="text-align: right;">
+            <h1 class="display-4">¡Hola!</h1>
+
+            <a href="/User">Usuario</a><br />
+
+
+
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="slider">
+            <ul>
+                <li>
+                    <img src="~/photosBendi/ahorro.jpg" alt="" style="width: 700px; height: auto;">
+                </li>
+                <li>
+                    <img src="~/photosBendi/mueble.jpg" alt="" style="width: 800px; height: auto;">
+                </li>
+                <li>
+                    <img src="~/photosBendi/personas_nevera.jpg" alt="" style="width: 800px; height: auto;">
+                </li>
+                <li>
+                    <img src="~/photosBendi/exito.jpg" alt="" style="width: 800px; height: auto;">
+                </li>
+            </ul>
+        </div>
+
+    </div>
 </div>
-<a href="/User">Usuario</a><br />
-<a href="/User">Administrador</a><br />
-<a href="/User">Cliente</a><br />

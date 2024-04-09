@@ -141,6 +141,8 @@ namespace pruebaAlmacen.Areas.Identity.Pages.Account
                 PhoneNumber=Input.PhoneNumber,
                 Address=Input.Address,
                 CreateAt=DateTime.Now,
+                
+                
                 };
 
 

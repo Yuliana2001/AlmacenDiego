@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using AlmacenDiego.Models;
 using Microsoft.AspNetCore.Identity;
+using pruebaAlmacen.Models;
 
 namespace AlmacenDiego.Services
 {
@@ -11,6 +12,8 @@ namespace AlmacenDiego.Services
         {
             
         }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

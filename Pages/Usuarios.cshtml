@@ -1,0 +1,30 @@
+﻿@page
+@model pruebaAlmacen.Pages.UsuariosModel
+@{
+}
+<h2 class="text-center">Usuarios</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Dirección</th>
+        <th>Creado en</th>
+    </tr>
+    @foreach (var user in Model.ApplicationUsers)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.Email</td>
+            <td>@user.FirstName</td>
+            <td>@user.LastName</td>
+            <td>@user.Address</td>
+            <td>@user.CreateAt.ToString("MM/dd/yyyy")</td>
+            <td></td>
+            <td style="white-space:nowrap"></td>
+        </tr>
+    }
+
+
+</table>

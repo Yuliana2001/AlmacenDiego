@@ -1,0 +1,85 @@
+﻿namespace pruebaAlmacen.wwwroot.css {
+}
+
+.SideBar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Cambia el color de fondo a un verde más bonito */
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif; /* Cambia la tipografía */
+}
+
+.SideBar header {
+    font-size: 20px; /* Aumenta el tamaño de la fuente del encabezado */
+    color: #ffffff;
+    text-align: center;
+    line-height: 72px;
+    background: #4CAF50; /* Cambia el color de fondo del encabezado a un verde más oscuro */
+    user-select: none;
+}
+
+.SideBar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 68px;
+    font-size: 18px; /* Aumenta el tamaño de la fuente de los enlaces */
+    color: #ffffff;
+    padding-left: 42px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #2E8B57; /* Cambia el color del borde inferior a un verde más oscuro */
+    transition: .5s;
+}
+
+ul li:hover a {
+    padding-left: 60px;
+}
+
+.SideBar ul a li {
+    margin-left: 18px;
+}
+
+#check {
+    display: none;
+}
+
+label #okbutton, label #cancelbutton {
+    position: absolute;
+    cursor: pointer;
+    background: #4CAF50; /* Cambia el color de fondo de los botones a un verde más oscuro */
+}
+
+label #okbutton {
+    left: 42px;
+    top: 27px;
+    font-size: 36px;
+    color: white;
+    transition: all .5s;
+}
+
+label #cancelbutton {
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: #32CD32; /* Cambia el color del botón de cancelar a un verde más claro */
+    padding: 5px 10px;
+    transition: all .5s ease;
+}
+#check:checked ~.SideBar {
+    left: 0;
+}
+
+#check:checked ~label #okbutton {
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~label #cancelbutton {
+    left: 195px;
+}

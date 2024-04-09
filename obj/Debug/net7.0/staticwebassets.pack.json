@@ -5,6 +5,30 @@
       "PackagePath": "staticwebassets\\pruebaAlmacen.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\Products\\20240408222526524.jpg",
+      "PackagePath": "staticwebassets\\Products\\20240408222526524.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\Products\\20240409002114883.png",
+      "PackagePath": "staticwebassets\\Products\\20240409002114883.png"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\Products\\20240409002608998.jpeg",
+      "PackagePath": "staticwebassets\\Products\\20240409002608998.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\Products\\8806090667831-ok.png",
+      "PackagePath": "staticwebassets\\Products\\8806090667831-ok.png"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\css\\estiloAdmin.css",
+      "PackagePath": "staticwebassets\\css\\estiloAdmin.css"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\css\\estilos.css",
+      "PackagePath": "staticwebassets\\css\\estilos.css"
+    },
+    {
       "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -243,6 +267,34 @@
     {
       "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\photosBendi\\ahorro.jpg",
+      "PackagePath": "staticwebassets\\photosBendi\\ahorro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\photosBendi\\bendicion.png",
+      "PackagePath": "staticwebassets\\photosBendi\\bendicion.png"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\photosBendi\\cangrejo.png",
+      "PackagePath": "staticwebassets\\photosBendi\\cangrejo.png"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\photosBendi\\exito.jpg",
+      "PackagePath": "staticwebassets\\photosBendi\\exito.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\photosBendi\\login.png",
+      "PackagePath": "staticwebassets\\photosBendi\\login.png"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\photosBendi\\mueble.jpg",
+      "PackagePath": "staticwebassets\\photosBendi\\mueble.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\photosBendi\\personas_nevera.jpg",
+      "PackagePath": "staticwebassets\\photosBendi\\personas_nevera.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.pruebaAlmacen.props",

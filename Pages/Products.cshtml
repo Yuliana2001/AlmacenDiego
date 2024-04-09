@@ -1,0 +1,51 @@
+﻿@page
+@model pruebaAlmacen.Pages.ProductsModel
+@{
+}
+<div class="row mb-5">
+    <div class="col">
+        <a class="btn btn-primary" href="/Create">Agregar producto</a>
+
+    </div>
+    <div class="col">
+
+    </div>
+
+</div>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Categoria</th>
+        <th>Precio</th>
+        <th>Descripcion en</th>
+        <th>Foto</th>
+        <th>Fecha</th>
+
+
+    </tr>
+    @foreach (var product in Model.Products)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Brand</td>
+            <td>@product.Category</td>
+            <td>@product.Price</td>
+            <td>@product.Description</td>
+            <td><img src="~/Products/@product.ImageFileName" alt="" width="80" height="80"></td>
+            <td>@product.CreatedAt.ToString("MM/dd/yyyy")</td>
+            <td style="white-space:nowrap">
+                <a class="btn btn-primary btn-sm" href="/Edit?id=@product.Id">Editar</a>
+                <a class="btn btn-danger btn-sm" href="/Delete?id=@product.Id">Borrar</a>
+
+            </td>
+            <td></td>
+            <td style="white-space:nowrap"></td>
+        </tr>
+    }
+
+
+</table>

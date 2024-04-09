@@ -1,0 +1,84 @@
+﻿@page
+@model pruebaAlmacen.Pages.Admin.Products.IndexModel
+@{
+}
+<h2 class="text-center mb-5">
+    Lista de productos
+</h2>
+<div class="row mb-5">
+    <div class="col">
+        <a class="btn btn-primary" href="/Admin/Products/Create">Nuevo producto</a>
+
+    </div>
+    <div class="col">
+
+    </div>
+
+</div>
+
+<table class="table"
+    <tr>
+   <th>ID
+
+   </th>
+   <th>
+       Nombre
+   </th>
+   <th>
+       Marca
+   </th>
+    <th>
+        Categoría
+    </th>
+    <th>
+        Precio
+    </th>
+    <th>
+        Descripción
+    </th>
+    <th>
+        Imagen
+    </th>
+    <th>
+        Creado el día
+    </th>
+    <th>
+        Action
+    </th>
+    </tr>
+    @foreach(var product in Model.Products)
+    {
+       <tr>
+           <td>
+               @product.Id
+           </td>
+               <td>
+                @product.Name
+               </td>
+               <td>
+                @product.Brand
+               </td>
+               <td>
+                @product.Category
+               </td>
+               <td>
+                @product.Price)$
+               </td>
+                  <td>
+                @product.Description
+                   </td>
+
+              <td><img src="/Products/@product.ImageFileName" width="100" /> </td>
+                 <td>
+                @product.CreatedAt.ToString("MM/dd/yyyy")
+                 </td>
+
+                 <td style="white-space:nowrap">
+                             <a class="btn btn-primary btn-sm" href="/Admin/Products/Edit?id=@product.Id">Editar</a>
+                            <a class="btn btn-danger btn-sm" href="/Admin/Products/Delete?id=@product.Id">Eliminar</a>
+                         
+                                 
+               </td>
+       </tr>
+    }
+</table>

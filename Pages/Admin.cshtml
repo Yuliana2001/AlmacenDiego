@@ -3,4 +3,38 @@
 @{
 }
 
-<h2 class="text-center">Bienvenido administrador!</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="~/css/estiloAdmin.css" asp-append-version="true" />
+
+</head>
+
+<body>
+    <div style="text-align: right;">
+        <img src="~/photosBendi/cangrejo.png" alt="" style="width: 400px; height: auto;">
+    </div>
+    <div class="col-md-6" style="text-align: right; margin-top: 50px;">
+        <h1 class="display-4">Bienvenido administrador</h1>
+    </div>
+
+
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fa fa-bars" id="okbutton"></i>
+        <i class="fa fa-times" id="cancelbutton"></i>
+    </label>
+    <div class="SideBar">
+        <header>Menu</header>
+        <ul>
+            <li><a href="/Usuarios"><i class="fas fa-user"></i>Usuarios</a></li>
+            <li><a href="/Products/"><i class="fas fa-box-open"></i>Productos</a></li>
+
+        </ul>
+        <section>
+        </section>
+    </div>
+</body>
