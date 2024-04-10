@@ -76,7 +76,8 @@ namespace pruebaAlmacen.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             /// 
-
+            [Required]
+            public int Cedula { get; set; }
             [Required]
        
             public string FirstName { get; set; }
@@ -138,7 +139,7 @@ namespace pruebaAlmacen.Areas.Identity.Pages.Account
                 LastName=Input.LastName,
                 UserName=Input.Email,
                 Email=Input.Email,
-                PhoneNumber=Input.PhoneNumber,
+                PhoneNumber=Input.PhoneNumber.ToString(),
                 Address=Input.Address,
                 CreateAt=DateTime.Now,
                 
@@ -152,7 +153,6 @@ namespace pruebaAlmacen.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User created a new account with password.");
                     await _userManager.AddToRoleAsync(user, "client");
-                   
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

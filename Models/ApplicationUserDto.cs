@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace AlmacenDiego.Models
+namespace pruebaAlmacen.Models
 {
-    public class ApplicationUser:IdentityUser
+    public class ApplicationUserDto
     {
         public int Cedula { get; set; } = 0;
         [Required, MaxLength(100)]
@@ -15,8 +14,7 @@ namespace AlmacenDiego.Models
         public string PhoneNumber { get; set; } = "";
         [Required, MaxLength(100)]
         public string Email { get; set; } = "";
-        public string RoleId { get; set; } = ""; // Agregar para relacionar con la tabla de roles
+        public string RoleId { get; set; } // Agregar para relacionar con la tabla de roles
 
-        public DateTime CreateAt { get; set; }
     }
 }

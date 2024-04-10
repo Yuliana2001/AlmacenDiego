@@ -10,6 +10,7 @@
 
         ApplicationUser applicationUser = (ApplicationUser)await UserManager.GetUserAsync(User);
         var firstName = applicationUser.FirstName;
+
         if (User.IsInRole("admin"))
         {
             <li class="nav-item">

@@ -13,6 +13,14 @@
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
 
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Cédula</label>
+                <div class="col-sm-8">
+                    <input asp-for="Input.Cedula" class="form-control" />
+                    <span asp-validation-for="Input.Cedula" class="text-danger"></span>
+                </div>
+            </div>
+
 
             <div class="row mb-3">
                 <label class="colcol-sm-4 col-form-label">Primer Nombre</label>

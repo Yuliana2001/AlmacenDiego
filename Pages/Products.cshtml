@@ -2,6 +2,15 @@
 @model pruebaAlmacen.Pages.ProductsModel
 @{
 }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="~/css/estiloAdmin.css" asp-append-version="true" />
+
+</head>
 <div class="row mb-5">
     <div class="col">
         <a class="btn btn-primary" href="/Create">Agregar producto</a>
@@ -11,6 +20,21 @@
 
     </div>
 
+</div>
+<input type="checkbox" id="check">
+<label for="check">
+    <i class="fa fa-bars" id="okbutton"></i>
+    <i class="fa fa-times" id="cancelbutton"></i>
+</label>
+<div class="SideBar">
+    <header>Menu</header>
+    <ul>
+        <li><a href="/Usuarios"><i class="fas fa-user"></i>Usuarios</a></li>
+        <li><a href="/Products/"><i class="fas fa-box-open"></i>Productos</a></li>
+
+    </ul>
+    <section>
+    </section>
 </div>
 
 <table class="table">
@@ -45,6 +69,37 @@
             <td></td>
             <td style="white-space:nowrap"></td>
         </tr>
+    }
+    @if (Model.Products != null && Model.Products.TotalPages > 1)
+    {
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                @if (Model.Products.PreviousPage)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="?pageNumber=@(Model.Products.PageIndex - 1)" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                }
+                @for (int i = 1; i <= Model.Products.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.Products.PageIndex ? "active" : "")">
+                        <a class="page-link" href="?pageNumber=@i">@i</a>
+                    </li>
+                }
+                @if (Model.Products.NextPage)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="?pageNumber=@(Model.Products.PageIndex + 1)" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
     }
 
 

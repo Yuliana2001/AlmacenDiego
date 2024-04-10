@@ -3,7 +3,9 @@
 @{
 }
 <h2 class="text-center">Bienvenido a tu cuenta de Bendición para el hogar!</h2>
-
+<div>
+    Cedula: @Model.appUser?.Cedula
+</div>
 
 <div>
     FirstName: @Model.appUser?.FirstName
@@ -12,14 +14,15 @@
     Last Name: @Model.appUser?.LastName
 </div>
 <div>
-    Email:  @Model.appUser?.Email
+    Phone:  @Model.appUser?.PhoneNumber
 </div>
 <div>
-    Phone:  @Model.appUser?.PhoneNumber
+    Email:  @Model.appUser?.Email
 </div>
 <div>
     Address:  @Model.appUser?.Address
 </div>
+
 <div>
     Created at:  @Model.appUser?.CreateAt.ToString("MM/dd/yyyy")
 </div>

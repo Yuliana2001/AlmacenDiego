@@ -1,10 +1,10 @@
 ﻿@page
-@model pruebaAlmacen.Pages.CreateModel
+@model pruebaAlmacen.Pages.EditUsuariosModel
 @{
 }
 <div class="row">
     <div class="col-md-8 mx-auto rounded border p-3">
-        <h2 class="text-center mb-5">Nuevo producto</h2>
+        <h2 class="text-center mb-5">Editar usuario</h2>
         @if (Model.errorMessage.Length > 0)
         {
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -25,69 +25,60 @@
             <div class="row mb-3">
                 <label class="col-sm-4 col-form-label">Nombre</label>
                 <div class="col-sm-8">
-                    <input class="form-control" asp-for="ProductDto.Name">
-                    <span asp-validation-for="ProductDto.Name" class="text-danger"></span>
+                    <input class="form-control" asp-for="ApplicationUserDto.FirstName">
+                    <span asp-validation-for="ApplicationUserDto.FirstName" class="text-danger"></span>
 
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Marca</label>
+                <label class="col-sm-4 col-form-label">Apellido</label>
                 <div class="col-sm-8">
-                    <input class="form-control" asp-for="ProductDto.Brand">
-                    <span asp-validation-for="ProductDto.Brand" class="text-danger"></span>
+                    <input class="form-control" asp-for="ApplicationUserDto.LastName">
+                    <span asp-validation-for="ApplicationUserDto.LastName" class="text-danger"></span>
 
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Categoría</label>
+                <label class="col-sm-4 col-form-label">Rol</label>
                 <div class="col-sm-8">
-                    <select class="form-select" asp-for="ProductDto.Category">
-                        <option value="Otro">Otro</option>
-                        <option value="Muebles">Muebles</option>
-                        <option value="Televisores">Televisores</option>
-                        <option value="Neveras">Neveras</option>
-                        <option value="Computadores">Computadores</option>
-                        <option value="Accesorios">Accesorios</option>
-                        <option value="Camaras">Camaras</option>
-                        <option value="Tablets">Tablets</option>
-                        <option value="Accesorios">Accesorios</option>
+                    <select class="form-select" asp-for="ApplicationUserDto.RoleId">
+                        <option value="3c1f1a88-d8bd-48a9-a571-d6a52780ec21">Administrador</option>
+                        <option value="e8de83f7-001a-43dd-9749-65877117412d">Vendedor</option>
+
                     </select>
                 </div>
             </div>
 
-
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Precio</label>
+                <label class="col-sm-4 col-form-label">Número de teléfono</label>
                 <div class="col-sm-8">
-                    <input class="form-control" asp-for="ProductDto.Price">
-                    <span asp-validation-for="ProductDto.Price" class="text-danger"></span>
+                    <input class="form-control" asp-for="ApplicationUserDto.PhoneNumber">
+                    <span asp-validation-for="ApplicationUserDto.PhoneNumber" class="text-danger"></span>
 
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Descripción</label>
+                <label class="col-sm-4 col-form-label">Email</label>
                 <div class="col-sm-8">
-                    <input class="form-control" asp-for="ProductDto.Description">
+                    <input class="form-control" asp-for="ApplicationUserDto.Email">
 
-                    <span asp-validation-for="ProductDto.Price" class="text-danger"></span>
+                    <span asp-validation-for="ApplicationUserDto.Email" class="text-danger"></span>
 
                 </div>
             </div>
 
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Actualizar imagen</label>
+                <label class="col-sm-4 col-form-label">Direccion</label>
                 <div class="col-sm-8">
-                    <input class="form-control" asp-for="ProductDto.ImageFile">
-                    <span asp-validation-for="ProductDto.ImageFile" class="text-danger"></span>
+                    <input class="form-control" asp-for="ApplicationUserDto.Address">
+                    <span asp-validation-for="ApplicationUserDto.Address" class="text-danger"></span>
+
 
                 </div>
             </div>
-
-
-
 
 
             <div class="row mb-3">

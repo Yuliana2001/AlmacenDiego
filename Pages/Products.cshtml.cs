@@ -3,6 +3,7 @@ using AlmacenDiego.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using pruebaAlmacen.Models;
 
 namespace pruebaAlmacen.Pages
@@ -11,16 +12,19 @@ namespace pruebaAlmacen.Pages
     public class ProductsModel : PageModel
     {
         private readonly ApplicationDbContext context;
-        public List<Product> Products { get; set; } = new List<Product>();
+
+        public PaginatedList<Product> Products { get; set; }
 
         public ProductsModel(ApplicationDbContext context)
         {
             this.context = context;
         }
-        public void OnGet()
-        {
-            Products = context.Products.OrderByDescending(p => p.Id).ToList();
 
+        public async Task OnGetAsync(int? pageNumber)
+        {
+            const int pageSize = 5;
+            var productsQuery = context.Products.AsNoTracking().OrderByDescending(p => p.Id);
+            Products = await PaginatedList<Product>.CreateAsync(productsQuery, pageNumber ?? 1, pageSize);
         }
     }
 }

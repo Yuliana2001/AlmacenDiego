@@ -2,27 +2,70 @@
 @model pruebaAlmacen.Pages.UsuariosModel
 @{
 }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="~/css/estiloAdmin.css" asp-append-version="true" />
+
+</head>
+
+
+<input type="checkbox" id="check">
+<label for="check">
+    <i class="fa fa-bars" id="okbutton"></i>
+    <i class="fa fa-times" id="cancelbutton"></i>
+</label>
+<div class="SideBar">
+    <header>Menu</header>
+    <ul>
+        <li><a href="/Usuarios"><i class="fas fa-user"></i>Usuarios</a></li>
+        <li><a href="/Products/"><i class="fas fa-box-open"></i>Productos</a></li>
+
+    </ul>
+    <section>
+    </section>
+</div>
+
 <h2 class="text-center">Usuarios</h2>
 <table class="table">
     <tr>
-        <th>ID</th>
-        <th>Email</th>
+        <th>Cedula</th>
         <th>Nombre</th>
         <th>Apellido</th>
+        <th>Email</th>
+        <th>Teléfono</th>
         <th>Dirección</th>
+        <th>Rol</th>
         <th>Creado en</th>
     </tr>
     @foreach (var user in Model.ApplicationUsers)
     {
         <tr>
-            <td>@user.Id</td>
-            <td>@user.Email</td>
+            <td>@user.Cedula</td>
             <td>@user.FirstName</td>
             <td>@user.LastName</td>
+            <td>@user.Email</td>
+            <td>@user.PhoneNumber</td>
             <td>@user.Address</td>
+            <td>
+                @if (user.RoleId == "3c1f1a88-d8bd-48a9-a571-d6a52780ec21")
+                {
+                    <span>Administrador</span>
+                }
+                else if (user.RoleId == "e8de83f7-001a-43dd-9749-65877117412d")
+                {
+                    <span>Vendedor</span>
+                }
+            </td>
             <td>@user.CreateAt.ToString("MM/dd/yyyy")</td>
             <td></td>
-            <td style="white-space:nowrap"></td>
+            <td style="white-space:nowrap">
+                <a class="btn btn-primary btn-sm" href="/EditUsuarios?id=@user.Id">Editar</a>
+
+            </td>
         </tr>
     }
 

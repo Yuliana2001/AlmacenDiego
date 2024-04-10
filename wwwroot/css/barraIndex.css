@@ -1,0 +1,49 @@
+﻿namespace pruebaAlmacen.wwwroot.css
+{
+
+}
+/* Estilos para la barraIndex */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px; /* Bordes redondos */
+    background-color: rgba(76, 255, 0, 0.5); /* Color de fondo con transparencia */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.sidebar {
+    padding: 10px;
+}
+
+    .sidebar h2 {
+        font-size: 24px; /* Tamaño del título */
+        color: #ffffff; /* Color del título */
+        margin-bottom: 10px; /* Espacio entre el título y el párrafo */
+    }
+
+    .sidebar p {
+        font-size: 16px; /* Tamaño del texto */
+        color: #f0f0f0; /* Color del texto */
+        margin-bottom: 20px; /* Espacio inferior */
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+    .sidebar a {
+        text-decoration: none;
+        color: #ffffff; /* Color del enlace */
+        transition: color 0.3s; /* Transición suave del color */
+    }
+
+        .sidebar a:hover {
+            color: #bbbbbb; /* Color del enlace al pasar el mouse */
+        }
