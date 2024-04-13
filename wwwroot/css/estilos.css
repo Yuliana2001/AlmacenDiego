@@ -7,64 +7,51 @@
 .container {
     width: 80%; /* Ajusta el ancho del contenedor según tus necesidades */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
+    background-color: rgb(94, 209, 14, 0.70);
+    padding: 20px; /* Añade un poco de espacio interno al contenedor */
+    border-radius: 10px; /* Añade bordes redondeados al contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade una sombra suave al contenedor */
 }
 
 /* Estilos del carrusel */
 .slider {
-    width: 100%;
+    position: relative; /* Agrega posición relativa para manejar elementos internos */
+    width: 100%; /* Haz que el carrusel ocupe todo el ancho del contenedor */
+    max-width: 100%; /* Asegúrate de que el carrusel no sea más ancho que el contenedor */
     height: 400px; /* Modifica esta altura según tus necesidades */
-    overflow: hidden;
+    overflow: hidden; /* Oculta el contenido que se desborda del carrusel */
 }
 
     .slider ul {
         display: flex;
         animation: cambio 20s infinite alternate;
-        width: 400%; /* Cambiado a 400% para acomodar todas las imágenes en una fila */
         padding: 0;
         margin: 0;
+        list-style: none; /* Elimina los puntos de la lista */
     }
 
     .slider li {
-        width: 25%; /* Cambiado a 25% para acomodar cada imagen en una cuarta parte del ancho del carrusel */
-        list-style: none;
+        flex: 1; /* Haz que los elementos de la lista ocupen todo el espacio disponible */
+        margin-right: 10px; /* Añade un pequeño espacio entre las imágenes */
     }
 
     .slider img {
         width: 100%;
         height: 100%;
         object-fit: cover; /* Esto asegura que las imágenes se ajusten dentro de los contenedores sin deformarlas */
+        border-radius: 10px; /* Añade bordes redondeados a las imágenes */
     }
 
 @keyframes cambio {
-    0% {
-        margin-left: 0;
+    0%, 100% {
+        transform: translateX(0); /* Inicia y termina en la posición original */
     }
 
-    25% {
-        margin-left: 0;
+    25%, 75% {
+        transform: translateX(-100%); /* Mueve el carrusel hacia la izquierda */
     }
 
-    30% {
-        margin-left: -100%;
-    }
-
-    55% {
-        margin-left: -100%;
-    }
-
-    60% {
-        margin-left: -200%;
-    }
-
-    85% {
-        margin-left: -200%;
-    }
-
-    90% {
-        margin-left: -300%;
-    }
-
-    100% {
-        margin-left: -300%;
+    50% {
+        transform: translateX(-200%); /* Mueve el carrusel aún más hacia la izquierda */
     }
 }

@@ -14,9 +14,12 @@ namespace AlmacenDiego.Services
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Venta> Ventas { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
             var client = new IdentityRole("client");
             client.NormalizedName = "client";
 

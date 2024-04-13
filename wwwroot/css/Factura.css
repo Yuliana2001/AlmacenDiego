@@ -1,0 +1,131 @@
+﻿namespace pruebaAlmacen.wwwroot.css
+{
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+:root {
+    --brand-name: var(--white);
+    --secondary: #F0B862;
+}
+
+body {
+    color: #484848;
+    font-size: .86rem;
+}
+
+.panel {
+    width: 320px;
+
+}
+
+
+.main {
+    margin-left: 300px;
+
+}
+
+.invoice-list {
+    position: absolute;
+    top: 68px;
+    left: 5px;
+    .amount
+
+{
+    font-size: 1.6em;
+    font-weight: 700;
+    text-align: right;
+}
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Esto centrará el contenedor horizontalmente */
+    padding: 0 15px; /* Agrega un poco de espacio a los lados del contenedor */
+    display: flex;
+    flex-wrap: wrap; /* Asegura que los elementos se ajusten correctamente */
+}
+
+.table {
+    tr th
+
+{
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+tr td {
+    font-size: .78rem;
+}
+
+}
+
+.svg-icon {
+    width: 1.2em;
+    height: 1.2em;
+    padding: 0;
+}
+
+    .svg-icon path,
+    .svg-icon polygon,
+    .svg-icon rect {
+        fill: #6A1B9A;
+    }
+
+    .svg-icon circle {
+        stroke: #6A1B9A;
+        stroke-width: 1;
+    }
+
+.footer .footer-app {
+    text-align: center;
+    font-size: .78rem;
+    padding: 10px;
+}
+
+// APP
+.navbar {
+    .brand-name
+
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    font-weight: 300;
+    color: var(--brand-name);
+}
+
+.nav-item {
+    text-transform: uppercase;
+    &.active .nav-link
+
+{
+    color: var(--secondary);
+    .svg-icon path, .svg-icon polygon, .svg-icon rect
+
+{
+    fill: var(--secondary);
+}
+
+.svg-icon circle {
+    stroke: var(--secondary);
+}
+
+}
+
+.svg-icon {
+    margin-top: -4px;
+}
+
+    .svg-icon path,
+    .svg-icon polygon,
+    .svg-icon rect {
+        fill: #FFF;
+    }
+
+    .svg-icon circle {
+        stroke: #FFF;
+    }
+
+}
+}

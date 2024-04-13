@@ -17,10 +17,6 @@
       "PackagePath": "staticwebassets\\Products\\20240409002608998.jpeg"
     },
     {
-      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\Products\\20240409103304865.jpg",
-      "PackagePath": "staticwebassets\\Products\\20240409103304865.jpg"
-    },
-    {
       "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\Products\\20240409103351845.jpg",
       "PackagePath": "staticwebassets\\Products\\20240409103351845.jpg"
     },
@@ -33,8 +29,24 @@
       "PackagePath": "staticwebassets\\Products\\20240409103540029.jpg"
     },
     {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\Products\\20240412185549558.jpg",
+      "PackagePath": "staticwebassets\\Products\\20240412185549558.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\Products\\20240412185815181.png",
+      "PackagePath": "staticwebassets\\Products\\20240412185815181.png"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\Products\\20240412235112855.jpg",
+      "PackagePath": "staticwebassets\\Products\\20240412235112855.jpg"
+    },
+    {
       "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\Products\\8806090667831-ok.png",
       "PackagePath": "staticwebassets\\Products\\8806090667831-ok.png"
+    },
+    {
+      "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\css\\Factura.css",
+      "PackagePath": "staticwebassets\\css\\Factura.css"
     },
     {
       "Id": "C:\\Users\\Yuliana\\source\\repos\\SuiteSerenityAPI\\pruebaAlmacen\\wwwroot\\css\\barraIndex.css",

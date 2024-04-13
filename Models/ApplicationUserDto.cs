@@ -4,7 +4,7 @@ namespace pruebaAlmacen.Models
 {
     public class ApplicationUserDto
     {
-        public int Cedula { get; set; } = 0;
+        public string Cedula { get; set; }
         [Required, MaxLength(100)]
         public string FirstName { get; set; } = "";
         [Required, MaxLength(100)]

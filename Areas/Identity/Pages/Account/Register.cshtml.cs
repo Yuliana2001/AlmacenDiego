@@ -77,7 +77,7 @@ namespace pruebaAlmacen.Areas.Identity.Pages.Account
             /// </summary>
             /// 
             [Required]
-            public int Cedula { get; set; }
+            public string Cedula { get; set; }
             [Required]
        
             public string FirstName { get; set; }
@@ -135,7 +135,8 @@ namespace pruebaAlmacen.Areas.Identity.Pages.Account
             {
                 var user = new ApplicationUser()
                 {
-                FirstName=Input.FirstName,
+                    Cedula = Input.Cedula,
+                    FirstName =Input.FirstName,
                 LastName=Input.LastName,
                 UserName=Input.Email,
                 Email=Input.Email,

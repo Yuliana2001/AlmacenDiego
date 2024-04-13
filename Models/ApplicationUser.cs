@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace AlmacenDiego.Models
 {
     public class ApplicationUser:IdentityUser
     {
-        public int Cedula { get; set; } = 0;
+        [Required, MaxLength(100)]
+        public string Cedula { get; set; }
         [Required, MaxLength(100)]
         public string FirstName { get; set; } = "";
         [Required, MaxLength(100)]
@@ -15,7 +17,6 @@ namespace AlmacenDiego.Models
         public string PhoneNumber { get; set; } = "";
         [Required, MaxLength(100)]
         public string Email { get; set; } = "";
-        public string RoleId { get; set; } = ""; // Agregar para relacionar con la tabla de roles
 
         public DateTime CreateAt { get; set; }
     }

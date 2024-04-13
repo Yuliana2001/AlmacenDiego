@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="~/css/estiloAdmin.css" asp-append-version="true" />
 
+
 </head>
 
 
@@ -22,7 +23,7 @@
     <header>Menu</header>
     <ul>
         <li><a href="/Usuarios"><i class="fas fa-user"></i>Usuarios</a></li>
-        <li><a href="/Products/"><i class="fas fa-box-open"></i>Productos</a></li>
+        <li><a href="/Products/"><i class="fas fa-box-open"></i>Inventario</a></li>
 
     </ul>
     <section>
@@ -38,7 +39,6 @@
         <th>Email</th>
         <th>Teléfono</th>
         <th>Dirección</th>
-        <th>Rol</th>
         <th>Creado en</th>
     </tr>
     @foreach (var user in Model.ApplicationUsers)
@@ -50,19 +50,11 @@
             <td>@user.Email</td>
             <td>@user.PhoneNumber</td>
             <td>@user.Address</td>
-            <td>
-                @if (user.RoleId == "3c1f1a88-d8bd-48a9-a571-d6a52780ec21")
-                {
-                    <span>Administrador</span>
-                }
-                else if (user.RoleId == "e8de83f7-001a-43dd-9749-65877117412d")
-                {
-                    <span>Vendedor</span>
-                }
-            </td>
+
             <td>@user.CreateAt.ToString("MM/dd/yyyy")</td>
             <td></td>
             <td style="white-space:nowrap">
+                <a class="btn btn-primary btn-sm" href="/DeleteUser?id=@user.Id">Eliminar</a>
                 <a class="btn btn-primary btn-sm" href="/EditUsuarios?id=@user.Id">Editar</a>
 
             </td>

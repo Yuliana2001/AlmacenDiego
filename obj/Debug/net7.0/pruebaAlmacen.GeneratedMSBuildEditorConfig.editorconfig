@@ -64,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Yuliana/source/repos/SuiteSerenityAPI/pruebaAlmacen/Pages/DeleteUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Yuliana/source/repos/SuiteSerenityAPI/pruebaAlmacen/Pages/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -76,6 +80,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Yuliana/source/repos/SuiteSerenityAPI/pruebaAlmacen/Pages/Facturacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmFjdHVyYWNpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Yuliana/source/repos/SuiteSerenityAPI/pruebaAlmacen/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -86,6 +94,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Yuliana/source/repos/SuiteSerenityAPI/pruebaAlmacen/Pages/Products.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yuliana/source/repos/SuiteSerenityAPI/pruebaAlmacen/Pages/RegisterConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJDb25maXJtYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Yuliana/source/repos/SuiteSerenityAPI/pruebaAlmacen/Pages/Shared/_LoginPartial.cshtml]
@@ -102,6 +114,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Yuliana/source/repos/SuiteSerenityAPI/pruebaAlmacen/Pages/Usuarios.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yuliana/source/repos/SuiteSerenityAPI/pruebaAlmacen/Pages/Venta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVudGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Yuliana/source/repos/SuiteSerenityAPI/pruebaAlmacen/Pages/_ViewImports.cshtml]

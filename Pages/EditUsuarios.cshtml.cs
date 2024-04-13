@@ -9,91 +9,80 @@ using pruebaAlmacen.Models;
 
 namespace pruebaAlmacen.Pages
 {
-    public class EditUsuariosModel : PageModel
+    public class EditUsuariosModel: PageModel
     {
-        private readonly IWebHostEnvironment _environment;
-        private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment environment;
+        private readonly ApplicationDbContext context;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
 
         [BindProperty]
         public ApplicationUserDto ApplicationUserDto { get; set; } = new ApplicationUserDto();
         public ApplicationUser ApplicationUser { get; set; } = new ApplicationUser();
+
         public string errorMessage = "";
         public string successMessage = "";
-
-        public EditUsuariosModel(IWebHostEnvironment environment, ApplicationDbContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        public EditUsuariosModel(IWebHostEnvironment environment, ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
-            _environment = environment;
-            _context = context;
             _userManager = userManager;
-            _roleManager = roleManager;
+            this.environment = environment;
+            this.context = context;
         }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public void OnGet(string? id)
         {
             if (id == null)
             {
-                return RedirectToPage("/Usuarios");
+                Response.Redirect("/Usuarios");
             }
-
-            var applicationUser = await _context.ApplicationUsers.FindAsync(id);
-            if (applicationUser == null)
+            var user = context.ApplicationUsers.Find(id);
+            if (user == null)
             {
-                return RedirectToPage("/Usuarios");
+                Response.Redirect("/Usuarios");
+                return;
             }
+            ApplicationUserDto.Cedula = user.Cedula;
+            ApplicationUserDto.FirstName = user.FirstName;
+            ApplicationUserDto.LastName = user.LastName;
+            ApplicationUserDto.Address = user.Address;
+            ApplicationUserDto.PhoneNumber = user.PhoneNumber;
+            ApplicationUserDto.Email = user.Email;
+            ApplicationUser = user;
 
-            ApplicationUserDto.Cedula = applicationUser.Cedula;
-            ApplicationUserDto.FirstName = applicationUser.FirstName;
-            ApplicationUserDto.LastName = applicationUser.LastName;
-            ApplicationUserDto.PhoneNumber = applicationUser.PhoneNumber;
-            ApplicationUserDto.Email = applicationUser.Email;
-            ApplicationUserDto.Address = applicationUser.Address;
-
-            ApplicationUser = applicationUser;
-
-            return Page();
         }
-
-        public async Task<IActionResult> OnPostAsync()
+        public async Task OnPostAsync(string? id)
         {
-            if (!ModelState.IsValid)
+            if (id == null)
             {
-                return Page();
+                Response.Redirect("/Usuarios");
+                return;
             }
 
-            var applicationUser = await _userManager.FindByIdAsync(ApplicationUser.Id);
-            if (applicationUser == null)
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
             {
-                return NotFound();
+                Response.Redirect("/Usuarios");
+                return;
             }
 
-            // Obtener el ID del rol asociado al usuario
-            var userRole = await _context.UserRoles.FirstOrDefaultAsync(ur => ur.UserId == applicationUser.Id);
+            user.Cedula = ApplicationUserDto.Cedula;
+            user.FirstName = ApplicationUserDto.FirstName;
+            user.LastName = ApplicationUserDto.LastName;
+            user.Address = ApplicationUserDto.Address;
+            user.PhoneNumber = ApplicationUserDto.PhoneNumber;
+            user.Email = ApplicationUserDto.Email;
 
+            // Obtener el rol seleccionado del DTO
+            var selectedRole = ApplicationUserDto.RoleId;
 
+            // Añadir usuario al rol seleccionado
+            await _userManager.AddToRoleAsync(user, selectedRole);
 
-            // Obtener el nombre del rol asociado al ID del rol
-            var role = await _roleManager.FindByIdAsync(ApplicationUserDto.RoleId);
+            await context.SaveChangesAsync();
 
-
-            var roleName = role.Name;
-
-            // Asignar el rol al usuario
-            var roleResult = await _userManager.AddToRoleAsync(applicationUser, roleName);
-            if (!roleResult.Succeeded)
-            {
-                foreach (var error in roleResult.Errors)
-                {
-                    errorMessage += "Error en agregar error.";
-                }
-            }
-            else
-            {
-                successMessage = "El rol se agregó correctamente.";
-            }
-
-            return RedirectToPage("/EditUsuarios", new { id = ApplicationUser.Id });
+            ApplicationUser = user;
+            successMessage = "Usuario actualizado correctamente";
+            Response.Redirect("/Usuarios");
         }
+
     }
 }

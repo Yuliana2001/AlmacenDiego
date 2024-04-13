@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace pruebaAlmacen.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240410000942_ThirdMigration")]
-    partial class ThirdMigration
+    [Migration("20240412225534_InitialDb")]
+    partial class InitialDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,8 +38,10 @@ namespace pruebaAlmacen.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("Cedula")
-                        .HasColumnType("int");
+                    b.Property<string>("Cedula")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -89,10 +91,6 @@ namespace pruebaAlmacen.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -146,19 +144,19 @@ namespace pruebaAlmacen.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d798c2d9-a79c-4074-a1cb-bfa8964ae298",
+                            Id = "9d90e690-18c3-4430-a5f0-0f1847a190d9",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "b0ecff78-c7a4-46cb-9fc1-a159a6517f9a",
+                            Id = "2192c0ae-8d06-4955-82f0-8dd71c37dc5e",
                             Name = "client",
                             NormalizedName = "client"
                         },
                         new
                         {
-                            Id = "804f94d7-64d3-40f9-85bc-479fae5f9053",
+                            Id = "b67ef885-9310-466d-bb26-3a6119d78cd0",
                             Name = "seller",
                             NormalizedName = "seller"
                         });

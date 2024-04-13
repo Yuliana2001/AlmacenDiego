@@ -7,7 +7,7 @@
 namespace pruebaAlmacen.Migrations
 {
     /// <inheritdoc />
-    public partial class SecondMigration : Migration
+    public partial class VentaMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,33 +15,26 @@ namespace pruebaAlmacen.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "134b1b55-a40f-42e1-8372-054313fa80ef");
+                keyValue: "5e43e46b-3b69-42c3-8c6c-a0f81e396b5a");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "8f7e33b0-44b3-4a48-9a32-522986b0c5df");
+                keyValue: "c83cacdc-6f67-47b1-82d1-46bb23f6d224");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "9955279d-c6bc-4653-87e0-b1c036cfe585");
-
-            migrationBuilder.AddColumn<int>(
-                name: "Cedula",
-                table: "AspNetUsers",
-                type: "int",
-                nullable: false,
-                defaultValue: 0);
+                keyValue: "f17c864b-8602-4df9-84fc-5585e017c899");
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "3c1f1a88-d8bd-48a9-a571-d6a52780ec21", null, "admin", "admin" },
-                    { "8b2386bf-6b8a-4b54-8773-6bf5def11eb3", null, "client", "client" },
-                    { "e8de83f7-001a-43dd-9749-65877117412d", null, "seller", "seller" }
+                    { "553ce7de-dd72-44aa-8794-5064c766d2bc", null, "client", "client" },
+                    { "633762f7-0592-444a-af47-c3f6eb6589a0", null, "seller", "seller" },
+                    { "7252cefb-e14a-420b-b963-9259130ddfd0", null, "admin", "admin" }
                 });
         }
 
@@ -51,30 +44,26 @@ namespace pruebaAlmacen.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "3c1f1a88-d8bd-48a9-a571-d6a52780ec21");
+                keyValue: "553ce7de-dd72-44aa-8794-5064c766d2bc");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "8b2386bf-6b8a-4b54-8773-6bf5def11eb3");
+                keyValue: "633762f7-0592-444a-af47-c3f6eb6589a0");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "e8de83f7-001a-43dd-9749-65877117412d");
-
-            migrationBuilder.DropColumn(
-                name: "Cedula",
-                table: "AspNetUsers");
+                keyValue: "7252cefb-e14a-420b-b963-9259130ddfd0");
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "134b1b55-a40f-42e1-8372-054313fa80ef", null, "admin", "admin" },
-                    { "8f7e33b0-44b3-4a48-9a32-522986b0c5df", null, "seller", "seller" },
-                    { "9955279d-c6bc-4653-87e0-b1c036cfe585", null, "client", "client" }
+                    { "5e43e46b-3b69-42c3-8c6c-a0f81e396b5a", null, "seller", "seller" },
+                    { "c83cacdc-6f67-47b1-82d1-46bb23f6d224", null, "admin", "admin" },
+                    { "f17c864b-8602-4df9-84fc-5585e017c899", null, "client", "client" }
                 });
         }
     }

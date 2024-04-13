@@ -35,8 +35,10 @@ namespace pruebaAlmacen.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("Cedula")
-                        .HasColumnType("int");
+                    b.Property<string>("Cedula")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -86,10 +88,6 @@ namespace pruebaAlmacen.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -143,19 +141,19 @@ namespace pruebaAlmacen.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d798c2d9-a79c-4074-a1cb-bfa8964ae298",
+                            Id = "7252cefb-e14a-420b-b963-9259130ddfd0",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "b0ecff78-c7a4-46cb-9fc1-a159a6517f9a",
+                            Id = "553ce7de-dd72-44aa-8794-5064c766d2bc",
                             Name = "client",
                             NormalizedName = "client"
                         },
                         new
                         {
-                            Id = "804f94d7-64d3-40f9-85bc-479fae5f9053",
+                            Id = "633762f7-0592-444a-af47-c3f6eb6589a0",
                             Name = "seller",
                             NormalizedName = "seller"
                         });
@@ -310,9 +308,48 @@ namespace pruebaAlmacen.Migrations
                         .HasPrecision(16, 2)
                         .HasColumnType("decimal(16,2)");
 
+                    b.Property<Guid?>("VentaId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("VentaId");
+
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("pruebaAlmacen.Models.Venta", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClienteId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EstadoPago")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MetodoPago")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
+
+                    b.ToTable("Ventas");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -364,6 +401,29 @@ namespace pruebaAlmacen.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("pruebaAlmacen.Models.Product", b =>
+                {
+                    b.HasOne("pruebaAlmacen.Models.Venta", null)
+                        .WithMany("Products")
+                        .HasForeignKey("VentaId");
+                });
+
+            modelBuilder.Entity("pruebaAlmacen.Models.Venta", b =>
+                {
+                    b.HasOne("AlmacenDiego.Models.ApplicationUser", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+                });
+
+            modelBuilder.Entity("pruebaAlmacen.Models.Venta", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }
